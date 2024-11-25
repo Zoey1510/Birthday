@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bday</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="clickMessage">CLICK IT👇</h1>
+
+    <video id="myVideo" width="100%" height="500" preload="auto">
+      <source src="vdo2.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <script>
+      const video = document.getElementById("myVideo");
+      const message = document.getElementById("clickMessage");
+      let clickCount = 0;
+
+      video.addEventListener("click", function () {
+        clickCount++;
+
+        if (clickCount === 1) {
+          // Play the video on the first click
+          video.play();
+          message.textContent = "BOOM!! CLICK IT AGAIN😜";
+        } else if (clickCount === 2) {
+          // Navigate to the next page on the second click
+          window.location.href = "home.html"; // Change to your desired page
+        }
+      });
+    </script>
+  </body>
+</html>
